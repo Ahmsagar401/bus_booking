@@ -13,6 +13,11 @@ pipeline {
         sh 'mvn clean install'
       }
     }
+    stage('deploy') {
+      steps {
+        sh 'scp /home/slave1/workspace/Bus_booking_develop/target/bus-booking-app-1.0-SNAPSHOT.jar root@172.31.28.235:/opt/apache-tomcat-8.5.98/webapps/'
+      }
+    }
   }
 }
 
