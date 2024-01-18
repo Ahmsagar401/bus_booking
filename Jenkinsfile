@@ -13,6 +13,12 @@ pipeline {
         sh 'mvn clean install'
       }
     }
+    stage('show contents of target') {
+      steps {
+        // print the contents of the target directory
+        sh 'ls -l target'
+      }
+    }
     stage('run JAR locally') {
       steps {
         // Run the JAR file using java -jar
