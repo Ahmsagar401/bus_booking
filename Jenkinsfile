@@ -16,7 +16,7 @@ pipeline {
     stage('run JAR locally') {
       steps {
         // Run the JAR file using java -jar
-        sh 'nohup timeout 10s java -jar /home/slave1/workspace/Bus_booking_develop/target/bus-booking-app-1.0-SNAPSHOT.jar > output.log 2>&1 &"
+        sh 'nohup timeout 10s java -jar /home/slave1/workspace/Bus_booking_develop/target/bus-booking-app-1.0-SNAPSHOT.jar > output.log 2>&1 &'
         // Sleep for a while to allow the application to start
         sleep 30
       }
