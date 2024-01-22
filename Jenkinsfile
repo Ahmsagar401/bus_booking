@@ -5,15 +5,16 @@ pipeline {
   stages {
     stage('checkout') {
       steps {
-        checkout()
+        sh 'rm -rf bus_booking'
+        sh 'git clone https://github.com/Ahmsagar401/bus_booking.git'
       }
     }
     stage('build') {
       steps {
-        sh 'mvn --version'
-        sh 'mvn clean install'
+        script {
+          build 'install'
+        }
       }
     }
   }
 }
-  
