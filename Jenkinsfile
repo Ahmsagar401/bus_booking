@@ -1,4 +1,4 @@
-@library("ahmlibrary") _
+@Library("ahmlibrary") _
 
 pipeline {
   agent { label 'slave1' }
